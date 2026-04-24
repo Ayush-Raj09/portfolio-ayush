@@ -4,424 +4,53 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Ayush Raj – Data Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#0a0c10;--bg2:#111318;--bg3:#181b22;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --accent:#00e5a0;--accent2:#0af;
-  --text:#e8eaf0;--muted:#7a8094;--muted2:#525669;
-  --mono:'Space Mono',monospace;--sans:'DM Sans',sans-serif;
-}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,12,16,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;}
-.nav-logo{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.05em;text-decoration:none;}
-.nav-links{display:flex;gap:2rem;}
-.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
-.nav-links a:hover{color:var(--accent);}
-
-/* HERO */
-.hero{padding:7rem 2.5rem 5rem;max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:center;}
-.hero-eyebrow{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.15em;margin-bottom:1.2rem;}
-.hero h1{font-family:var(--mono);font-size:3rem;font-weight:700;line-height:1.1;letter-spacing:-.02em;}
-.hero h1 span{color:var(--accent);}
-.hero-sub{margin-top:1rem;font-size:15px;color:var(--muted);max-width:440px;line-height:1.8;}
-.hero-btns{display:flex;gap:12px;margin-top:2rem;flex-wrap:wrap;}
-.btn{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:10px 22px;border-radius:4px;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
-.btn-primary{background:var(--accent);color:#0a0c10;border:none;font-weight:700;}
-.btn-primary:hover{background:#00ffb3;transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--accent);border:1px solid var(--accent);}
-.btn-outline:hover{background:rgba(0,229,160,0.08);transform:translateY(-1px);}
-.avatar-box{width:200px;height:220px;border-radius:12px;background:var(--bg3);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 0 0 4px rgba(0,229,160,0.15),0 8px 32px rgba(0,0,0,0.4);}
-.avatar-box::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,229,160,0.08) 100%);pointer-events:none;}
-.avatar-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
-.avatar-dot{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(0,229,160,0.25),0 0 12px rgba(0,229,160,0.4);z-index:2;}
-
-/* SECTIONS */
-section{max-width:860px;margin:0 auto;padding:4rem 2.5rem;border-top:1px solid var(--border);}
-.section-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.15em;margin-bottom:.5rem;}
-.section-title{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:2.5rem;}
-
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.skill-group{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.25rem;}
-.skill-group-title{font-family:var(--mono);font-size:11px;color:var(--accent2);letter-spacing:.12em;margin-bottom:1rem;}
-.skill-pills{display:flex;flex-wrap:wrap;gap:6px;}
-.pill{font-size:12px;color:var(--muted);background:rgba(255,255,255,0.04);border:1px solid var(--border2);padding:4px 10px;border-radius:4px;transition:all .15s;cursor:default;}
-.pill:hover{border-color:var(--accent);color:var(--accent);}
-
-/* PROJECTS */
-.projects-grid{display:flex;flex-direction:column;gap:1.25rem;}
-.project-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.75rem;transition:border-color .2s;position:relative;overflow:hidden;}
-.project-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease;}
-.project-card:hover::before{transform:scaleY(1);}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem;}
-.project-title{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--text);}
-.project-year{font-family:var(--mono);font-size:11px;color:var(--accent);background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);padding:3px 9px;border-radius:4px;white-space:nowrap;}
-.project-desc{font-size:13.5px;color:var(--muted);line-height:1.75;}
-.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem;}
-.tag{font-size:11px;font-family:var(--mono);color:var(--accent2);background:rgba(0,170,255,0.07);border:1px solid rgba(0,170,255,0.18);padding:3px 9px;border-radius:4px;}
-
-/* PROOF OF WORK */
-.proof-btn{margin-top:1.25rem;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent);background:rgba(0,229,160,0.07);border:1px solid rgba(0,229,160,0.25);padding:8px 16px;border-radius:4px;cursor:pointer;transition:all .2s;user-select:none;}
-.proof-btn:hover{background:rgba(0,229,160,0.14);border-color:var(--accent);}
-.proof-btn .arrow{transition:transform .2s;display:inline-block;}
-.proof-btn.open .arrow{transform:rotate(90deg);}
-.proof-panel{display:none;margin-top:1.25rem;border:1px solid var(--border2);border-radius:8px;overflow:hidden;background:var(--bg);}
-.proof-panel.open{display:block;}
-.proof-tabs{display:flex;border-bottom:1px solid var(--border);}
-.proof-tab{font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:10px 18px;color:var(--muted);cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;margin-bottom:-1px;}
-.proof-tab:hover{color:var(--text);}
-.proof-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
-.proof-content{padding:1.25rem;}
-.proof-content.hidden{display:none;}
-.dashboard-img{width:100%;border-radius:6px;border:1px solid var(--border);display:block;}
-.slideshow{position:relative;}
-.slide-img{width:100%;border-radius:6px;border:1px solid var(--border);display:block;}
-.slide-nav{display:flex;align-items:center;justify-content:space-between;margin-top:.75rem;}
-.slide-arrow{font-family:var(--mono);font-size:12px;color:var(--accent);background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);padding:6px 14px;border-radius:4px;cursor:pointer;transition:all .2s;user-select:none;}
-.slide-arrow:hover:not(:disabled){background:rgba(0,229,160,0.18);}
-.slide-arrow:disabled{color:var(--muted2);background:transparent;border-color:var(--border);cursor:default;}
-.slide-counter{font-family:var(--mono);font-size:12px;color:var(--muted);}
-.slide-thumbs{display:flex;gap:6px;margin-top:.75rem;flex-wrap:wrap;}
-.slide-thumb{width:56px;height:38px;object-fit:cover;border-radius:3px;border:1px solid var(--border);cursor:pointer;opacity:.5;transition:all .15s;}
-.slide-thumb:hover{opacity:.8;}
-.slide-thumb.active{opacity:1;border-color:var(--accent);}
-
-/* EDUCATION */
-.edu-list{display:flex;flex-direction:column;gap:1.25rem;}
-.edu-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;display:grid;grid-template-columns:1fr auto;gap:.5rem 1.5rem;align-items:start;}
-.edu-deg{font-size:14px;font-weight:500;color:var(--text);}
-.edu-school{font-size:13px;color:var(--muted);margin-top:3px;}
-.edu-year{font-family:var(--mono);font-size:11px;color:var(--accent);text-align:right;margin-top:2px;}
-.edu-cgpa{font-family:var(--mono);font-size:11px;color:var(--accent2);background:rgba(0,170,255,0.07);border:1px solid rgba(0,170,255,0.18);padding:3px 9px;border-radius:4px;display:inline-block;margin-top:6px;}
-
-/* CERTS */
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;}
-.cert-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.2rem;transition:border-color .2s;}
-.cert-card:hover{border-color:rgba(0,229,160,0.3);}
-.cert-issuer{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em;margin-bottom:6px;}
-.cert-name{font-size:13px;color:var(--text);line-height:1.5;font-weight:500;}
-.cert-date{font-size:12px;color:var(--muted);margin-top:4px;}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.contact-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s;}
-.contact-item:hover{border-color:var(--accent);transform:translateY(-2px);}
-.contact-icon{width:36px;height:36px;border-radius:6px;background:rgba(0,229,160,0.1);border:1px solid rgba(0,229,160,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--accent);flex-shrink:0;}
-.contact-label{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;}
-.contact-value{font-size:13.5px;color:var(--text);margin-top:1px;word-break:break-all;}
-
-footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.08em;}
-
-@media(max-width:640px){
-  .hero{grid-template-columns:1fr;}.avatar-box{display:none;}.hero h1{font-size:2rem;}
-  .skills-grid,.cert-grid,.contact-grid{grid-template-columns:1fr;}
-  nav{padding:0 1.25rem;}.nav-links{gap:1rem;}
-}
+/* --- removed .edu-cgpa CSS completely --- */
 </style>
 </head>
+
 <body>
-
-<nav>
-  <a class="nav-logo" href="#top">AR.portfolio</a>
-  <div class="nav-links">
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<div class="hero" id="top">
-  <div>
-    <div class="hero-eyebrow">// DATA ANALYST</div>
-    <h1>Ayush<br/><span>Raj.</span></h1>
-    <p class="hero-sub">Transforming raw data into actionable insights. Skilled in SQL, Python, Excel &amp; Power BI — building dashboards that drive decisions.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">View Projects →</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
-    </div>
-  </div>
-  <div>
-    <div class="avatar-box">
-      <img src="images/profile.jpg" alt="Ayush Raj" class="avatar-img"/>
-      <div class="avatar-dot"></div>
-    </div>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">// 01</div>
-  <div class="section-title">Skills</div>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <div class="skill-group-title">LANGUAGES &amp; TOOLS</div>
-      <div class="skill-pills">
-        <span class="pill">SQL</span><span class="pill">Python</span><span class="pill">Excel</span><span class="pill">Power BI</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">COMPETENCIES</div>
-      <div class="skill-pills">
-        <span class="pill">Data Cleaning</span><span class="pill">Visualization</span><span class="pill">Dashboards</span><span class="pill">Data Analysis</span><span class="pill">Power Query</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">SOFT SKILLS</div>
-      <div class="skill-pills">
-        <span class="pill">Leadership</span><span class="pill">Team Management</span><span class="pill">Communication</span><span class="pill">Problem-Solving</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label">// 02</div>
-  <div class="section-title">Projects</div>
-  <div class="projects-grid">
-
-    <!-- FLIPKART -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Flipkart E-commerce Data Analysis &amp; Dashboard</div>
-        <span class="project-year">2026</span>
-      </div>
-      <p class="project-desc">Analyzed Flipkart e-commerce dataset (1700+ records) using Excel and Power BI, identifying revenue trends and top-performing brands. Built interactive dashboards with 3+ KPIs and derived actionable insights on pricing and product distribution.</p>
-      <div class="project-tags">
-        <span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">KPI Dashboard</span>
-      </div>
-      <div class="proof-btn" onclick="toggleProof('flip')" id="flipBtn">
-        <span class="arrow">▶</span> VIEW PROOF OF WORK
-      </div>
-      <div class="proof-panel" id="flipPanel">
-        <div class="proof-tabs">
-          <div class="proof-tab active" onclick="switchTab('flip','dashboard',this)">Power BI Dashboard</div>
-          <div class="proof-tab" onclick="switchTab('flip','slides',this)">Presentation (12 slides)</div>
-        </div>
-        <div class="proof-content" id="flip-dashboard">
-          <img class="dashboard-img" src="images/flipkart-dashboard.png" alt="Flipkart E-Commerce Power BI Dashboard"/></div>
-        <div class="proof-content hidden" id="flip-slides">
-          <div class="slideshow">
-            <img class="slide-img" id="flip-slideImg" src="" alt="Slide"/>
-            <div class="slide-nav">
-              <button class="slide-arrow" id="flip-prev" onclick="changeSlide('flip',-1)" disabled>← PREV</button>
-              <span class="slide-counter"><span id="flip-num">1</span> / 12</span>
-              <button class="slide-arrow" id="flip-next" onclick="changeSlide('flip',1)">NEXT →</button>
-            </div>
-            <div class="slide-thumbs" id="flip-thumbs"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CYCLISTIC -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Cyclistic Bike-Share Customer Conversion Analysis</div>
-        <span class="project-year">2025</span>
-      </div>
-      <p class="project-desc">Analyzed bike-share customer data using Excel and SQL to identify behavioral differences between casual riders and annual members. Performed data cleaning, transformation, and visualization to uncover usage patterns and provide conversion recommendations.</p>
-      <div class="project-tags">
-        <span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">Data Cleaning</span><span class="tag">Visualization</span>
-      </div>
-      <div class="proof-btn" onclick="toggleProof('cyc')" id="cycBtn">
-        <span class="arrow">▶</span> VIEW PROOF OF WORK
-      </div>
-      <div class="proof-panel" id="cycPanel">
-        <div class="proof-tabs">
-          <div class="proof-tab active" onclick="switchTab('cyc','slides',this)">Presentation (11 slides)</div>
-        </div>
-        <div class="proof-content" id="cyc-slides">
-          <div class="slideshow">
-            <img class="slide-img" id="cyc-slideImg" src="" alt="Slide"/>
-            <div class="slide-nav">
-              <button class="slide-arrow" id="cyc-prev" onclick="changeSlide('cyc',-1)" disabled>← PREV</button>
-              <span class="slide-counter"><span id="cyc-num">1</span> / 11</span>
-              <button class="slide-arrow" id="cyc-next" onclick="changeSlide('cyc',1)">NEXT →</button>
-            </div>
-            <div class="slide-thumbs" id="cyc-thumbs"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- POWER BI -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Interactive Power BI Dashboard for Data Analysis</div>
-        <span class="project-year">2025</span>
-      </div>
-      <p class="project-desc">Built interactive Power BI dashboards with AI-driven automated insights to visualize complex datasets. Applied data transformation techniques and enabled real-time data exploration for business stakeholders through dynamic visualizations.</p>
-      <div class="project-tags">
-        <span class="tag">Power BI</span><span class="tag">AI Insights</span><span class="tag">Data Transformation</span>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-label">// 03</div>
   <div class="section-title">Education</div>
+
   <div class="edu-list">
+
     <div class="edu-item">
       <div>
         <div class="edu-deg">B.Tech in Information Technology</div>
-        <div class="edu-school">Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar, Odisha</div>
-        <span class="edu-cgpa">CGPA: 7.43</span>
+        <div class="edu-school">
+          Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar, Odisha
+        </div>
       </div>
       <div class="edu-year">2023 – 2027</div>
     </div>
+
     <div class="edu-item">
       <div>
         <div class="edu-deg">Senior Secondary (Class XII)</div>
-        <div class="edu-school">DAV Public School, BSEB Colony, Patna, Bihar</div>
+        <div class="edu-school">
+          DAV Public School, BSEB Colony, Patna, Bihar
+        </div>
       </div>
       <div class="edu-year">2022 – 2023</div>
     </div>
+
     <div class="edu-item">
       <div>
         <div class="edu-deg">Secondary (Class X)</div>
-        <div class="edu-school">DAV Public School, BSEB Colony, Patna, Bihar</div>
+        <div class="edu-school">
+          DAV Public School, BSEB Colony, Patna, Bihar
+        </div>
       </div>
       <div class="edu-year">2020 – 2021</div>
     </div>
-  </div>
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="cert-issuer">GOOGLE / COURSERA</div>
-      <div class="cert-name">Google Data Analytics Certificate</div>
-      <div class="cert-date">Jul 2025</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-issuer">IBM</div>
-      <div class="cert-name">Python for Data Science</div>
-      <div class="cert-date">Mar 2026</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-issuer">OFFICEMASTER</div>
-      <div class="cert-name">Power BI Dashboard Development</div>
-      <div class="cert-date">Mar 2025</div>
-    </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">// 04</div>
-  <div class="section-title">Contact</div>
-  <div class="contact-grid">
-    <a href="mailto:ayushraj.work9@gmail.com" class="contact-item">
-      <div class="contact-icon">@</div>
-      <div>
-        <div class="contact-label">EMAIL</div>
-        <div class="contact-value">ayushraj.work9@gmail.com</div>
-      </div>
-    </a>
-    <a href="tel:+917004039388" class="contact-item">
-      <div class="contact-icon">#</div>
-      <div>
-        <div class="contact-label">PHONE</div>
-        <div class="contact-value">+91 7004039388</div>
-      </div>
-    </a>
-    <a href="https://www.linkedin.com/in/ayushraj09/" target="_blank" rel="noopener" class="contact-item">
-      <div class="contact-icon">in</div>
-      <div>
-        <div class="contact-label">LINKEDIN</div>
-        <div class="contact-value">linkedin.com/in/ayushraj09</div>
-      </div>
-    </a>
-    <a href="https://github.com/Ayush-Raj09" target="_blank" rel="noopener" class="contact-item">
-      <div class="contact-icon">gh</div>
-      <div>
-        <div class="contact-label">GITHUB</div>
-        <div class="contact-value">github.com/Ayush-Raj09</div>
-      </div>
-    </a>
-  </div>
-  <p style="margin-top:1.5rem;font-size:13px;color:var(--muted);">
-    Also reachable at: <a href="mailto:2306272@kiit.ac.in" style="color:var(--accent2);text-decoration:none;">2306272@kiit.ac.in</a>
-    &nbsp;·&nbsp; Based in Bhubaneswar, India
-  </p>
-</section>
-
-<footer>&copy; 2026 Ayush Raj &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; Built with precision</footer>
-
-<script>
-const FLIP_SLIDES = [
-  "images/flipkart_ppt/Slide1.PNG", "images/flipkart_ppt/Slide2.PNG", "images/flipkart_ppt/Slide3.PNG",
-  "images/flipkart_ppt/Slide4.PNG", "images/flipkart_ppt/Slide5.PNG", "images/flipkart_ppt/Slide6.PNG",
-  "images/flipkart_ppt/Slide7.PNG", "images/flipkart_ppt/Slide8.PNG", "images/flipkart_ppt/Slide9.PNG",
-  "images/flipkart_ppt/Slide10.PNG", "images/flipkart_ppt/Slide11.PNG", "images/flipkart_ppt/Slide12.PNG"
-];
-const CYC_SLIDES  = [
-  "images/cyclistic_ppt/Slide1.PNG", "images/cyclistic_ppt/Slide2.PNG", "images/cyclistic_ppt/Slide3.PNG",
-  "images/cyclistic_ppt/Slide4.PNG", "images/cyclistic_ppt/Slide5.PNG", "images/cyclistic_ppt/Slide6.PNG",
-  "images/cyclistic_ppt/Slide7.PNG", "images/cyclistic_ppt/Slide8.PNG", "images/cyclistic_ppt/Slide9.PNG",
-  "images/cyclistic_ppt/Slide10.PNG", "images/cyclistic_ppt/Slide11.PNG"
-];
-
-const STATE = {
-  flip: { slides: FLIP_SLIDES, cur: 0, init: false },
-  cyc:  { slides: CYC_SLIDES,  cur: 0, init: false }
-};
-
-function toggleProof(key) {
-  const btn   = document.getElementById(key + 'Btn');
-  const panel = document.getElementById(key + 'Panel');
-  const isOpen = panel.classList.contains('open');
-  btn.classList.toggle('open', !isOpen);
-  panel.classList.toggle('open', !isOpen);
-  if (!isOpen && !STATE[key].init) initThumbs(key);
-}
-
-function initThumbs(key) {
-  STATE[key].init = true;
-  const thumbsEl = document.getElementById(key + '-thumbs');
-  STATE[key].slides.forEach((path, i) => {
-    const img = document.createElement('img');
-    img.className = 'slide-thumb' + (i === 0 ? ' active' : '');
-    img.src = path;
-    img.onclick = () => goToSlide(key, i);
-    thumbsEl.appendChild(img);
-  });
-  goToSlide(key, 0);
-}
-
-function goToSlide(key, n) {
-  const s = STATE[key];
-  s.cur = n;
-  document.getElementById(key + '-slideImg').src = s.slides[n];
-  document.getElementById(key + '-num').textContent = n + 1;
-  document.getElementById(key + '-prev').disabled = n === 0;
-  document.getElementById(key + '-next').disabled = n === s.slides.length - 1;
-  document.querySelectorAll('#' + key + '-thumbs .slide-thumb').forEach((t, i) => {
-    t.classList.toggle('active', i === n);
-  });
-}
-
-function changeSlide(key, dir) {
-  const next = STATE[key].cur + dir;
-  if (next >= 0 && next < STATE[key].slides.length) goToSlide(key, next);
-}
-
-function switchTab(key, tab, el) {
-  const panel = document.getElementById(key + 'Panel');
-  panel.querySelectorAll('.proof-tab').forEach(t => t.classList.remove('active'));
-  panel.querySelectorAll('.proof-content').forEach(c => c.classList.add('hidden'));
-  el.classList.add('active');
-  document.getElementById(key + '-' + tab).classList.remove('hidden');
-  if (tab === 'slides' && !STATE[key].init) initThumbs(key);
-}
-</script>
 </body>
 </html>
